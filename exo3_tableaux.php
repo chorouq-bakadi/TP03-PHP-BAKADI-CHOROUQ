@@ -3,7 +3,11 @@
 // Objectif : manipulation des tableaux (affichage, statistiques, tris)
 // Date : 29/10/2026
 
-require "config.php";
+// include : simple Warning, le script continue. require : Fatal error, le script s'arrête.
+
+require "config.php"; 
+require "includes/entete_inc.php";
+require "includes/menu_inc.php";
 
 function mention($note)
 {
@@ -97,6 +101,13 @@ print_r($a + $b);
 var_dump($a == $b);
 var_dump($a === $b);
 echo "</pre>";
+
 // $a + $b : union, garde les clés de $a, ajoute celles de $b absentes de $a -> ["x"=>1,"y"=>2]
 // $a == $b : true, mêmes paires clé/valeur (l'ordre n'importe pas)
 // $a === $b : false, mêmes paires mais pas dans le même ordre (et mêmes types)
+require "includes/pied_inc.php";
+
+include "includes/inexistant.php";
+echo "La suite s'exécute<br>";
+
+// include : inclut le fichier à chaque appel (doublon). include_once : ne l'inclut qu'une seule fois.
